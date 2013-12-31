@@ -1,0 +1,17 @@
+h1 {
+  border-bottom: solid;
+}
+
+body {
+  background-color: lightgrey;
+  margin: 20px;
+}
+
+blockquote {
+  background-color: darkgrey;
+  color: white;
+  margin: 15x 10px 0px 10px;
+  padding: 10px;
+  border-style: dashed;	
+}
+  

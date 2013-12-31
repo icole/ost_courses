@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Forms</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="lesson10.css">	
+</head>
+<body>
+  <h1>Geography Test</h1>
+  <form id="test" method="get" 
+            action="https://students.oreillyschool.com/coderunner/formtester.php">
+            
+     <div class="fullquestion">
+     	     <div class="question">       
+	     	<label for="state">What was the first state?</label>
+	     </div>
+	     <div class="answer">
+		     <input type="text" id="state" placeholder="State" required>
+		     <br />
+	     </div>
+     </div>	     
+
+     <div class="fullquestion">
+     	     <div class="question">
+	     	<span>What is the capital of Colorado?</span>
+	     </div>
+	     <div class="answer">
+		     <input type="radio" id="fargo" name="capitol" value="fargo" required>
+		     <label for="fargo">Fargo</label>
+		     <br />
+		     <input type="radio" id="denver" name="capitol" value="denver" required>
+		     <label for="denver">Denver</label>
+		     <br />
+		     <input type="radio" id="richmond" name="capitol" value="richmond" required>
+		     <label for="richmond">Richmond</label>
+		     <br />
+		     <input type="radio" id="sacremento" name="capitol" value="sacremento" required>
+		     <label for="sacremento">Sacremento</label>
+		     <br />
+	     </div>
+     </div>
+     
+     <div class="fullquestion">
+     	   <p>Describe the terms of the Louisiana Purchase</p>
+	   <textarea name="textarea" rows="12" cols="60" required>
+	   </textarea>
+	</div>
+     </div>
+     
+     <div class="fullquestion">
+     	     <div class="question">       
+	     	<label for="date">When did Colorado become a state?</label>
+	     </div>
+	     <div class="answer">
+		     <input name="date" id="date" type="date" required>
+		     <br />
+	     </div>
+     </div>
+     
+     <input type="submit" id="testsubmit" value="Hand In">
+  </form>
+</body>
+</html>

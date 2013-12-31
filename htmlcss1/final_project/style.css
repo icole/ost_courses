@@ -1,0 +1,105 @@
+* { 
+    margin: 0; 
+    padding: 0;
+}
+
+body {
+    margin: 0px;
+    height: auto;
+}
+
+p {
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+h1,h2,h3,h4 {
+    font-family: "Helvetica Neue";
+}
+
+h1 {
+    font-weight: 100;
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+#navbar {
+    margin-bottom: 25px;
+    padding-top: 15px;
+    height: 40px;
+    width: 100%;
+    background-color: #d3d3d3;
+    font-family: "Helvetica Neue";
+}
+
+#navbar ul {
+    padding-left: 10px;
+    list-style:none;
+}
+
+#navbar ul li {
+    padding: 10px;
+    display: inline;
+}
+
+#navbar li:hover {
+    background-color: #fff;
+}
+
+#navbar a:link, a:visited  {
+    text-decoration:none;
+    color: #000;
+}
+
+#content {
+    display: table;
+    text-align: center;
+    width: 520px;
+    margin: 0 auto;
+}
+
+img {
+    border: 1px solid #000;
+    margin-bottom: 30px;
+}
+
+#intro {
+    text-align: left;
+}
+
+#books {
+    padding-top: 25px;
+}
+
+#books td {
+    padding-left: 25px;
+}
+
+#work a:link, a:visited {
+    text-decoration:none;
+    color: #000;
+    font-weight: bold;
+}
+
+#work li {
+    text-align: left;
+}
+
+#work img {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#education img {
+    float: left;
+}
+
+#education ul {
+    text-align: left;
+    padding-left: 200px;
+    font-weight: bold;
+}
+
+#about li {
+    text-align: left;
+}

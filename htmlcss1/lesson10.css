@@ -1,0 +1,23 @@
+h1 {
+	text-align: center;
+}
+form#test {
+	background-color: lightgrey;
+	width: 500px;
+	margin: auto;
+	padding: 40px 70px;
+	border: 2px dashed black;
+	font-family: Helvetica, sans-serif;
+}
+div.fullquestion {
+	padding: 20px 10px;
+}
+div.question {
+	float: left;
+}
+div.answer {
+	float: right;
+}
+input#color { 
+        border: 3px inset #adc3df;
+}

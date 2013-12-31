@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Tables</title>
+  <meta charset="utf-8">
+  <style>
+  	td {
+	    padding: 10px;
+	}
+	th {
+	    padding: 5px;
+	}
+	tr:nth-child(even) {
+	    background-color: lightgrey;
+	}
+	caption {
+	    font-weight: bold;
+	    font-size: 130%;
+	    border-bottom: 1px solid black;
+	}
+	td.source {
+	    font-style: italic;
+	    background-color: white;
+	    border-top: 1px dotted black;
+	}
+  </style>
+</head>
+<body>
+  <h1>Nathan's Hot Dog Eating Contest</h1>
+  <p>
+     This contest is to see how many hot dogs with buns (HDBs) 
+     contestants can eat in 10 minutes. Winners receive a trophy, 
+     two cases of Nathan's Famous hot dogs, and sometimes, money.
+  </p>
+  <table>
+    <caption>Winners, 2006-2011</caption>
+    <tr>
+      <th>Year</th> <th>Winner</th> <th># HDBs Eaten</th>
+    </tr>
+    <tr>
+      <td>2011</td> 
+      <td>Joey Chestnut</td> 
+      <td>62</td>
+    </tr>
+    <tr>
+      <td>2010</td> <td>Joey Chestnut</td> <td>54</td>
+    </tr>
+    <tr>
+      <td>2009</td> <td>Joey Chestnut</td> <td>68</td>
+    </tr>
+    <tr>
+      <td>2008</td> <td>Joey Chestnut</td> <td>59</td>
+    </tr>
+    <tr>
+      <td>2007</td> <td>Joey Chestnut</td> <td>66</td>
+    </tr>
+    <tr>
+      <td>2006</td> <td>Takeru Kobayashi</td> <td>54</td>
+    </tr>
+    <tr>
+      <td class="source" colspan="3">Source: 
+        <a href="http://en.wikipedia.org/wiki/Nathan's_Hot_Dog_Eating_Contest">Wikipedia</a>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

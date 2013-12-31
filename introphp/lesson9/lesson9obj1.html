@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doggie Daycare</title>
+</head>
+<body>
+    <h3>Wagging Wes's Doggie Daycare</h3>
+    <form action="lesson9obj1.php" method="POST">
+        <table>
+            <tr>
+                <td align="right">Pet's Name:</td>
+                <td align="left">
+                    <input type="text" name="name" id="name">
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Up to date on shots?:</td>
+                <td align="left"><input type="checkbox" name="shots" id=""><br></td>
+            </tr>
+            <tr>
+                <td align="right">Aggressive with other dogs?:</td>
+                <td align="left"><input type="checkbox" name="aggressive" id=""><br></td>
+            </tr>
+            <tr>
+                <td align="right">Service Needed</td>
+                <td align="left">
+                    <select name="service" id="">
+                        <option value="">Please Choose...</option>
+                        <option value="half_hour_walk">1/2 hour walk</option>
+                        <option value="hour_walk">1 hour walk</option>
+                        <option value="in-home_sitting">In-Home Dog Sitting</option>
+                        <option value="doggie_daycare">Doggie Daycare</option>
+                        <option value="boarding">Boarding</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Special Requests:</td>
+                <td align="left">
+                    <textarea cols="30" rows="10" name="request"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" value="SUBMIT"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
