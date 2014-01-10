@@ -8,9 +8,9 @@
      #with the header() function, no output can come before it.
      #echo "Please make sure you've filled in all required information.";
 
-     
      $query_string = $_SERVER['QUERY_STRING'];
-     $url = "http://".$_SERVER['HTTP_HOST']."/contact_form.php?".$query_string;
+   #add a flag called "error" to tell contact_form.php that something needs fixed
+     $url = "http://".$_SERVER['HTTP_HOST']."/ost_courses/introphp/lesson10/contact_form.php?".$query_string."&error=1";;
      
      header("Location: ".$url);
      exit();
@@ -18,6 +18,23 @@
   }
 
   extract($_GET, EXTR_PREFIX_SAME, "get");
+
+  #construct email message
+  $email_message = "Name: ".$name;
+  $email_message .= "\nEmail: ".$email;
+  $email_message .= "\nType of Request: ".$whoami;
+  $email_message .= "\nMessage: ".$message;
+  $email_message .= "\nHow you heard about us: ".$found;
+  $email_message .= "\nUser Agent: ".$_SERVER['HTTP_USER_AGENT'];
+  $email_message .= "\nIP Address: ".$_SERVER['REMOTE_ADDR'];
+
+  #contruct the email headers
+  $to = "ian.cole@me.com";
+  $from = $_GET['email'];
+  $email_subject = $_GET['subject'];
+
+  #now mail
+  mail($to, $email_subject, $email_message, "From: ".$from);
 
   echo "<h3>Thank you!</h3>";
   echo "Here is a copy of your request:<br/><br/>";

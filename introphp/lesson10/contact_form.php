@@ -4,20 +4,46 @@
     <meta charset="UTF-8">
     <title>Contact Form</title>
 </head>
+
+<?php
+
+if ($_GET['error'] == "1") {
+   $error_code = 1;  //this means that there's been an error and we need to notify the customer
+} else {
+   $error_code = 0;
+}
+
+?>
+
 <body>
     <h3>Contact ACME Corporation</h3>
+    <?
+        if ($error_code) {
+           echo "<div style='color:red'>Please help us with the following:</div>";
+        }
+    ?>
     <form action="contact.php" method="GET">
         <table>
             <tr>
                 <td align="right">Name:</td>
                 <td align="left">
                     <input type="text" name="name" value="<? echo $_GET['name']; ?>" size="25">
+                    <?
+                        if ($error_code && !($_GET['name'])) {
+                            echo "<b>Please include your name.</b>";
+                        }
+                    ?>
                 </td>
             </tr>
             <tr>
                 <td align="right">Email:</td>
                 <td align="left">
                     <input type="text" name="email" value="<? echo $_GET['email']; ?>" size="25">
+                    <?
+                        if ($error_code && !($_GET['email'])) {
+                            echo "<b>Please include your email address.</b>";
+                        }
+                    ?>
                 </td>
             </tr>
             <tr>
@@ -38,17 +64,36 @@
                             I have a billing question
                         </options>
                     </select>
+                    <?
+                        if ($error_code && !($_GET['whoami'])) {
+                            echo "<b>Please choose a request type.</b>";
+                        }
+                    ?>
                 </td>
             </tr>
             <tr>
                 <td align="right">Subject:</td>
-                <td align="left"><input type="text" name="subject" value="<? echo $_GET['subject']; ?>" size="50" max="50"></td>
+                <td align="left">
+                    <input type="text" name="subject" value="<? echo $_GET['subject']; ?>" size="50" max="50">
+                    <?
+                        if ($error_code && !($_GET['subject'])) {
+                            echo "<b>Please add a subject for your request.</b>";
+                        }      
+                    ?>
+                </td>
             </tr>
             <tr> 
                 <td align="right" valign="top">Message:</td>
-                <td align="left"><textarea name="message" cols="50" rows="10">
-                    <? echo $_GET['message']; ?>
-                </textarea></td>
+                <td align="left">
+                    <textarea name="message" cols="50" rows="8">
+                        <? echo $_GET['message']; ?>
+                    </textarea>
+                    <?
+                        if ($error_code && !($_GET['message'])) {
+                            echo "<b>Please fill in a message for us.</b>";
+                        }
+                    ?>
+                </td>
             </tr>
             <tr>
                 <td colspan="2">How did you hear about us?
