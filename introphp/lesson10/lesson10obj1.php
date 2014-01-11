@@ -13,7 +13,7 @@
 
      $error = "1";
 
-     if (!($valid_email)) {
+     if ($_GET['email'] && !($valid_email)) {
       $error = "2";
      }
      #add a flag called "error" to, set to 2 if email isn't valid

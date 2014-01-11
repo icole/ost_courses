@@ -1,7 +1,7 @@
 <?
     $str = $_GET["input_string"];
     #Matches the first non vowels and puts them in a capture group
-    preg_match("/^([^aeiou]*)([a-z]*)/", $str, $matches);
+    preg_match("/^([^aeiou]qu*|[^aeiou]*)([a-z]*)/", $str, $matches);
     #Takes the non vowel beginning of the string and adds the ay
     $ending = $matches[1] . "ay";
     $beginning = $matches[2];
