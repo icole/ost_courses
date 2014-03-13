@@ -4,7 +4,7 @@
     echo "<table border='1'>";
     $done  = FALSE;
     $days = 0;
-    $day_names = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    $day_names = array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
     #Calculate the time for the first of the month of my birthaday
     $tracked_day = mktime(0, 0, 0, 6, 1, 2014);
     do {

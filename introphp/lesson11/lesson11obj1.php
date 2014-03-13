@@ -1,6 +1,9 @@
 <?
     $current_time = time();
-    $holiday = mktime(0, 0, 0, 7, 4, 2014);
+    $holiday = mktime(0, 0, 0, 7, 4, (int)date("Y", $current_time));
+    if ($current_time > $holiday) {
+    	$holiday = mktime(0, 0, 0, 7, 4, ((int)date("Y", $current_time)+1));
+    }
     #Calculate the remaining total seconds
     $diff_total = $holiday - $current_time;
     #Convert the remaining seconds to days and hours
