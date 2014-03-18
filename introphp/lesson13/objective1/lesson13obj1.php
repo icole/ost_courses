@@ -1,6 +1,25 @@
 <?
 
+  #Consolidated printing of the new form for downloading
+  function print_download_form($error, $email) {
+    if ($error && !$email) {
+      echo "<b>Please include your email address.</b><br />";
+    }
+    echo "<form action='download.php' method='GET'>";
+    echo "<input type='text' name='email' value='".$email."' placeholder='email' size='25'>";
+    echo "<br />";
+    echo "<br />";
+    echo "<input type='submit' value='Download Now!'>";
+    echo "</form>";
+  }
+
   require("./template_top.inc");
+
+  if ($_GET['error'] == "1") {
+     $error_code = 1;  //this means that there's been an error and we need to notify the customer
+  } else {
+     $error_code = 0;
+  }
 
   $user_data = $_SERVER['HTTP_USER_AGENT'];
   $ip = $_SERVER['REMOTE_ADDR'];
@@ -16,7 +35,12 @@
       echo "<b>You are not authorized!</b>";
     }
     else {
-      echo "<a href='download.php'><button type=\"button\">Download Now!</button></a>";
+      if ($_COOKIE['download']) {
+        echo "You have already downloaded this file";
+      }
+      else {
+        print_download_form($error_code, $_GET['email']);
+      }
     }
   }
   elseif ($windows_check) {
@@ -24,7 +48,12 @@
       echo "<b>You are not authorized!</b>";
     }
     else {
-      echo "<a href='download.php'><button type=\"button\">Download Now!</button></a>";
+      if ($_COOKIE['download']) {
+        echo "You have already downloaded this file";
+      }
+      else {
+        print_download_form($error_code, $_GET['email']);
+      }
     }
   }
   else {
